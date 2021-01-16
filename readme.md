@@ -1,4 +1,6 @@
-<img src="images/logo.svg" width="400px">
+<a href="https://www.questpdf.com/">
+  <img src="images/logo.svg" width="400px"> 
+</a>
 
 QuestPDF is an open-source, modern and battle-tested library that can help you with generating PDF documents by offering friendly, discoverable and predictable C# fluent API.
 
