@@ -35,7 +35,7 @@ namespace QuestPDF.ExampleInvoice
             {
                 row.RelativeColumn().Stack(column =>
                 {
-                    column.Element().Text($"Invoice #{Model.InvoiceNumber}", TextStyle.Default.Size(20));
+                    column.Element().Text($"Invoice #{Model.InvoiceNumber}", TextStyle.Default.Size(20).Bold());
                     column.Element().Text($"Issue date: {Model.IssueDate:d}");
                     column.Element().Text($"Due date: {Model.DueDate:d}");
                 });
@@ -60,7 +60,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Element().AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.Size(14));
+                column.Element().AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
                     column.Element().PaddingTop(25).Element(ComposeComments);
@@ -74,11 +74,11 @@ namespace QuestPDF.ExampleInvoice
                 // header
                 section.Header().BorderBottom(1).Padding(5).Row(row => 
                 {
-                    row.ConstantColumn(25).Text("#");
-                    row.RelativeColumn(3).Text("Product");
-                    row.RelativeColumn().AlignRight().Text("Unit price");
-                    row.RelativeColumn().AlignRight().Text("Quantity");
-                    row.RelativeColumn().AlignRight().Text("Total");
+                    row.ConstantColumn(25).Text("#", TextStyle.Default.SemiBold());
+                    row.RelativeColumn(3).Text("Product", TextStyle.Default.SemiBold());
+                    row.RelativeColumn().AlignRight().Text("Unit price", TextStyle.Default.SemiBold());
+                    row.RelativeColumn().AlignRight().Text("Quantity", TextStyle.Default.SemiBold());
+                    row.RelativeColumn().AlignRight().Text("Total", TextStyle.Default.SemiBold());
                 });
 
                 // content
@@ -106,7 +106,7 @@ namespace QuestPDF.ExampleInvoice
             container.Background("#EEE").Padding(10).Stack(message => 
             {
                 message.Spacing(5);
-                message.Element().Text("Comments", TextStyle.Default.Size(14));
+                message.Element().Text("Comments", TextStyle.Default.Size(14).SemiBold());
                 message.Element().Text(Model.Comments);
             });
         }
@@ -129,7 +129,7 @@ namespace QuestPDF.ExampleInvoice
             {
                 column.Spacing(5);
 
-                column.Element().BorderBottom(1).PaddingBottom(5).Text(Title);
+                column.Element().BorderBottom(1).PaddingBottom(5).Text(Title, TextStyle.Default.SemiBold());
                 
                 column.Element().Text(Address.CompanyName);
                 column.Element().Text(Address.Street);
