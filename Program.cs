@@ -18,7 +18,7 @@ namespace QuestPDF.ExampleInvoice
             
             var model = InvoiceDocumentDataSource.GetInvoiceDetails();
             var document = new InvoiceDocument(model);
-            document.Generate(filePath);
+            document.GeneratePdf(filePath);
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {

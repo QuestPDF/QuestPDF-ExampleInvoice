@@ -60,7 +60,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Element().AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
+                column.Element().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
                     column.Element().PaddingTop(25).Element(ComposeComments);
@@ -69,16 +69,18 @@ namespace QuestPDF.ExampleInvoice
 
         void ComposeTable(IContainer container)
         {
+            var headerStyle = TextStyle.Default.SemiBold();
+            
             container.PaddingTop(10).Section(section =>
             {
                 // header
                 section.Header().BorderBottom(1).Padding(5).Row(row => 
                 {
-                    row.ConstantColumn(25).Text("#", TextStyle.Default.SemiBold());
-                    row.RelativeColumn(3).Text("Product", TextStyle.Default.SemiBold());
-                    row.RelativeColumn().AlignRight().Text("Unit price", TextStyle.Default.SemiBold());
-                    row.RelativeColumn().AlignRight().Text("Quantity", TextStyle.Default.SemiBold());
-                    row.RelativeColumn().AlignRight().Text("Total", TextStyle.Default.SemiBold());
+                    row.ConstantColumn(25).Text("#", headerStyle);
+                    row.RelativeColumn(3).Text("Product", headerStyle);
+                    row.RelativeColumn().AlignRight().Text("Unit price", headerStyle);
+                    row.RelativeColumn().AlignRight().Text("Quantity", headerStyle);
+                    row.RelativeColumn().AlignRight().Text("Total", headerStyle);
                 });
 
                 // content
