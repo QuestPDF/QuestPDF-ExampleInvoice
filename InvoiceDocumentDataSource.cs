@@ -25,7 +25,7 @@ namespace QuestPDF.ExampleInvoice
                 CustomerAddress = GenerateRandomAddress(),
                 
                 Items = items,
-                Comments = TextPlaceholder.Paragraph()
+                Comments = Placeholders.Paragraph()
             };
         }
 
@@ -33,7 +33,7 @@ namespace QuestPDF.ExampleInvoice
         {
             return new OrderItem
             {
-                Name = TextPlaceholder.Label(),
+                Name = Placeholders.Label(),
                 Price = (decimal) Math.Round(Random.NextDouble() * 100, 2),
                 Quantity = Random.Next(1, 10)
             };
@@ -43,12 +43,12 @@ namespace QuestPDF.ExampleInvoice
         {
             return new Address
             {
-                CompanyName = TextPlaceholder.Name(),
-                Street = TextPlaceholder.Label(),
-                City = TextPlaceholder.Label(),
-                State = TextPlaceholder.Label(),
-                Email = TextPlaceholder.Email(),
-                Phone = TextPlaceholder.PhoneNumber() 
+                CompanyName = Placeholders.Name(),
+                Street = Placeholders.Label(),
+                City = Placeholders.Label(),
+                State = Placeholders.Label(),
+                Email = Placeholders.Email(),
+                Phone = Placeholders.PhoneNumber() 
             };
         }
     }

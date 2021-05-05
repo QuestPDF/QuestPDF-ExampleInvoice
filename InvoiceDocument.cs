@@ -23,8 +23,8 @@ namespace QuestPDF.ExampleInvoice
                 .PaddingVertical(50)
                 .Page(page =>
                 {
-                    page.Header(ComposeHeader);
-                    page.Content(ComposeContent);
+                    page.Header().Element(ComposeHeader);
+                    page.Content().Element(ComposeContent);
                     page.Footer().AlignCenter().PageNumber("Page {number}");
                 });
         }
@@ -33,11 +33,11 @@ namespace QuestPDF.ExampleInvoice
         {
             container.Row(row =>
             {
-                row.RelativeColumn().Stack(column =>
+                row.RelativeColumn().Stack(stack =>
                 {
-                    column.Element().Text($"Invoice #{Model.InvoiceNumber}", TextStyle.Default.Size(20).Bold());
-                    column.Element().Text($"Issue date: {Model.IssueDate:d}");
-                    column.Element().Text($"Due date: {Model.DueDate:d}");
+                    stack.Item().Text($"Invoice #{Model.InvoiceNumber}", TextStyle.Default.Size(20).Bold());
+                    stack.Item().Text($"Issue date: {Model.IssueDate:d}");
+                    stack.Item().Text($"Due date: {Model.DueDate:d}");
                 });
                 
                 row.ConstantColumn(100).Height(50).Placeholder();
@@ -46,24 +46,24 @@ namespace QuestPDF.ExampleInvoice
 
         void ComposeContent(IContainer container)
         {
-            container.PaddingVertical(40).PageableStack(column => 
+            container.PaddingVertical(40).Stack(column => 
             {
                 column.Spacing(5);
                 
-                column.Element().Row(row =>
+                column.Item().Row(row =>
                 {
                     row.RelativeColumn().Component(new AddressComponent("From", Model.SellerAddress));
                     row.ConstantColumn(50);
                     row.RelativeColumn().Component(new AddressComponent("For", Model.CustomerAddress));
                 });
 
-                column.Element(ComposeTable);
+                column.Item().Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Element().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
+                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
-                    column.Element().PaddingTop(25).Element(ComposeComments);
+                    column.Item().PaddingTop(25).Element(ComposeComments);
             });
         }
 
@@ -71,10 +71,10 @@ namespace QuestPDF.ExampleInvoice
         {
             var headerStyle = TextStyle.Default.SemiBold();
             
-            container.PaddingTop(10).Section(section =>
+            container.PaddingTop(10).Decoration(decoration =>
             {
                 // header
-                section.Header().BorderBottom(1).Padding(5).Row(row => 
+                decoration.Header().BorderBottom(1).Padding(5).Row(row => 
                 {
                     row.ConstantColumn(25).Text("#", headerStyle);
                     row.RelativeColumn(3).Text("Product", headerStyle);
@@ -84,13 +84,13 @@ namespace QuestPDF.ExampleInvoice
                 });
 
                 // content
-                section
+                decoration
                     .Content()
-                    .PageableStack(column =>
+                    .Stack(column =>
                     {
                         foreach (var item in Model.Items)
                         {
-                            column.Element().BorderBottom(1).BorderColor("CCC").Padding(5).Row(row => 
+                            column.Item().BorderBottom(1).BorderColor("CCC").Padding(5).Row(row => 
                             {
                                 row.ConstantColumn(25).Text(Model.Items.IndexOf(item) + 1);
                                 row.RelativeColumn(3).Text(item.Name);
@@ -105,11 +105,11 @@ namespace QuestPDF.ExampleInvoice
 
         void ComposeComments(IContainer container)
         {
-            container.Background("#EEE").Padding(10).Stack(message => 
+            container.ShowEntire().Background("#EEE").Padding(10).Stack(message => 
             {
                 message.Spacing(5);
-                message.Element().Text("Comments", TextStyle.Default.Size(14).SemiBold());
-                message.Element().Text(Model.Comments);
+                message.Item().Text("Comments", TextStyle.Default.Size(14).SemiBold());
+                message.Item().Text(Model.Comments);
             });
         }
     }
@@ -127,17 +127,17 @@ namespace QuestPDF.ExampleInvoice
         
         public void Compose(IContainer container)
         {
-            container.Stack(column =>
+            container.ShowEntire().Stack(column =>
             {
                 column.Spacing(5);
 
-                column.Element().BorderBottom(1).PaddingBottom(5).Text(Title, TextStyle.Default.SemiBold());
+                column.Item().BorderBottom(1).PaddingBottom(5).Text(Title, TextStyle.Default.SemiBold());
                 
-                column.Element().Text(Address.CompanyName);
-                column.Element().Text(Address.Street);
-                column.Element().Text($"{Address.City}, {Address.State}");
-                column.Element().Text(Address.Email);
-                column.Element().Text(Address.Phone);
+                column.Item().Text(Address.CompanyName);
+                column.Item().Text(Address.Street);
+                column.Item().Text($"{Address.City}, {Address.State}");
+                column.Item().Text(Address.Email);
+                column.Item().Text(Address.Phone);
             });
         }
     }
