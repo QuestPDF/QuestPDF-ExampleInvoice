@@ -16,16 +16,16 @@ namespace QuestPDF.ExampleInvoice
 
         public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
 
-        public void Compose(IContainer container)
+        public void Compose(IDocumentContainer container)
         {
             container
-                .PaddingHorizontal(50)
-                .PaddingVertical(50)
                 .Page(page =>
                 {
+                    page.Margin(50);
+                    
                     page.Header().Element(ComposeHeader);
                     page.Content().Element(ComposeContent);
-                    page.Footer().AlignCenter().PageNumber("Page {number}");
+                    page.Footer().AlignCenter().PageNumber();
                 });
         }
 
