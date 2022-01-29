@@ -154,7 +154,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Spacing(2);
 
                 column.Item().Text(Title, TextStyle.Default.SemiBold());
-                column.Item().PaddingBottom(5).LineHorizontal(1); 
+                column.Item().PaddingBottom(5).LineHorizontal(1).LineColor(Colors.Black); 
                 
                 column.Item().Text(Address.CompanyName);
                 column.Item().Text(Address.Street);
