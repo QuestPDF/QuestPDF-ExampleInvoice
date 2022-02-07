@@ -11,7 +11,7 @@ namespace QuestPDF.ExampleInvoice
         public static InvoiceModel GetInvoiceDetails()
         {
             var items = Enumerable
-                .Range(1, 25)
+                .Range(1, 250)
                 .Select(i => GenerateRandomOrderItem())
                 .ToList();
             
