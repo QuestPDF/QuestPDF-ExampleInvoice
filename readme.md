@@ -1,237 +1,130 @@
-<a href="https://www.questpdf.com/">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="400px"> 
+<a href="https://www.questpdf.com/" target="_blank">
+  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="300"> 
 </a>
 
-## Overview
+---
 
-**Rely on solid fundamentals** - This library is created specifically for designing and arranging document layouts, with full paging support.  Alternative solutions, such as HTML-based converters, are not designed for this purpose and therefore are often unpredictable and do not produce desired results.
+[![Dotnet](https://img.shields.io/badge/platform-.NET-blue)](https://www.nuget.org/packages/QuestPDF/)
+[![GitHub Repo stars](https://img.shields.io/github/stars/QuestPDF/QuestPDF)](https://github.com/QuestPDF/QuestPDF/stargazers)
+[![Nuget version](https://img.shields.io/nuget/v/QuestPdf)](https://www.nuget.org/packages/QuestPDF/)
+[![Nuget download](https://img.shields.io/nuget/dt/QuestPDF)](https://www.nuget.org/packages/QuestPDF/)
+[![License](https://img.shields.io/github/license/QuestPDF/QuestPDF)](https://github.com/QuestPDF/QuestPDF/blob/main/LICENSE)
+[![Sponsor project](https://img.shields.io/badge/sponsor-project-red)](https://github.com/sponsors/QuestPDF)
 
-**Work with organized self-explanatory code** - The entire process of implementing PDF document, takes place in your code. Free yourself from slow visual designers and strange technological limitations. Follow simple yet highly effective approaches to create maintainable, high-quality code.
+QuestPDF is an open-source .NET library for PDF documents generation.
 
-**Compose simple components into complex documents** - Do you remember the feeling when your code just works? When your ideas are becoming real without any effort? Working with simple, easy to understand, self-explanatory and highly composable layout elements is the key here!
+It offers a layouting engine designed with a full paging support in mind. The document consists of many simple elements (e.g. border, background, image, text, padding, table, grid etc.) that are composed together to create more complex structures. This way, as a developer, you can understand the behavior of every element and use them with full confidence. Additionally, the document and all its elements support paging functionality. For example, an element can be moved to the next page (if there is not enough space) or even be split between pages like table's rows.
 
-**Create and reuse components** - Feel no fear of complex documents! Create custom, reusable components and divide the document's layout into easy to maintain pieces. Inject data to customize content and use slots to enhance composability. Decide how complex approaches your solution needs and follow the best path.
+Unlike other libraries, it does not rely on the HTML-to-PDF conversion which in many cases is not reliable. Instead, it implements its own layouting engine that is optimized to cover all paging-related requirements.
 
-**Prototype with ease** - We understand that document generation is often tricky and require multiple iterations. The library offers additional prototyping tools such as random text generator or image placeholder element. By following best practices, you can develop a document without having data.
+## Please show the value
 
-**Enjoy fast PDF generation** - QuestPDF is created upon SkiaSharp, a well-known graphical library, and converts your data into PDF documents. It offers a highly optimized layouting engine capable of generating over 1000 PDF files per minute per core. The entire process is thread-safe.
+Choosing a project dependency could be difficult. We need to ensure stability and maintainability of our projects. Surveys show that GitHub stars count play an important factor when assessing library quality.
 
-## Support QuestPDF
+⭐ Please give this repository a star. It takes seconds and help thousands of developers!
 
-All great frameworks and libraries started from zero. Please help us to make QuestPDF a commonly known library and an obvious choice in case of generating PDF documents. It can be as easy as:
-- Giving this repository a star ⭐ so more people will know about it,
-- Observing 🤩 the library to know about each new realease,
-- Trying our sample project to see how easy it is to create an invoice 📊,
-- Sharing your thoughts 💬 with us and your colleagues,
-- Simply using it 👨‍💻 and suggesting new features,
-- Creating new features 🆕 for everybody.
+## Please share with the community
+
+As an open-source project without funding, I cannot afford advertising QuestPDF in a typical way. Instead, the library relies on community interactions. Please consider sharing a post about QuestPDF and the value it provides. It really does help!
+
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-reddit-red?logo=reddit)](https://reddit.com/submit?url=https://github.com/QuestPDF/QuestPDF&title=QuestPDF)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-hacker%20news-orange?logo=ycombinator)](https://news.ycombinator.com/submitlink?u=https://github.com/QuestPDF/QuestPDF)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-twitter-03A9F4?logo=twitter)](https://twitter.com/share?url=https://github.com/QuestPDF/QuestPDF&t=QuestPDF)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-facebook-1976D2?logo=facebook)](https://www.facebook.com/sharer/sharer.php?u=https://github.com/QuestPDF/QuestPDF)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-linkedin-3949AB?logo=linkedin)](https://www.linkedin.com/shareArticle?url=https://github.com/QuestPDF/QuestPDF&title=QuestPDF)
+
+## Support development
+
+It doesn't matter if you are a professional developer, creating a startup or work for an established company. All of us care about our tools and dependencies, about stability and security, about time and money we can safe, about quality we can offer. Please consider sponsoring QuestPDF to give me an extra motivational push to develop the next great feature.
+
+> If you represent a company, want to help the entire community and show that you care, please consider sponsoring QuestPDF using one of the higher tiers. Your company logo will be shown here for all developers, building a strong positive relation.
+
+[![Sponsor project](https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F%20sponsor-QuestPDF-red)](https://github.com/sponsors/QuestPDF)
 
 ## Installation
 
 The library is available as a nuget package. You can install it as any other nuget package from your IDE, try to search by `QuestPDF`. You can find package details [on this webpage](https://www.nuget.org/packages/QuestPDF/).
 
-<a href="https://www.nuget.org/packages/QuestPDF/">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/nuget.svg" width="200px">  
-</a>
+```xml
+// Package Manager
+Install-Package QuestPDF
+
+// .NET CLI
+dotnet add package QuestPDF
+
+// Package reference in .csproj file
+<PackageReference Include="QuestPDF" Version="2022.3.1" />
+```
+
+[![Nuget version](https://img.shields.io/badge/package%20details-QuestPDF-blue?logo=nuget)](https://www.nuget.org/packages/QuestPDF/)
 
 ## Documentation
 
-**[Release notes and roadmap](https://www.questpdf.com/documentation/releases.html)** - everything that is planned for future library iterations, description of new features and information about potential breaking changes.
+[![Getting started tutorial]( https://img.shields.io/badge/%F0%9F%9A%80%20read-getting%20started-blue)](https://www.questpdf.com/documentation/getting-started.html)
+A short and easy to follow tutorial showing how to design an invoice document under 200 lines of code.
 
-**[Getting started tutorial](https://www.questpdf.com/documentation/getting-started.html)** - a short and easy to follow tutorial showing how to design an invoice document under 200 lines of code.
 
-**[API Reference](https://www.questpdf.com/documentation/api-reference.html)** - a detailed description of behavior of all available components and how to use them with C# Fluent API.
+[![API reference](https://img.shields.io/badge/%F0%9F%93%96%20read-API%20reference-blue)](https://www.questpdf.com/documentation/api-reference.html)
+A detailed description of behavior of all available components and how to use them with C# Fluent API.
 
-**[Patterns and practices](https://www.questpdf.com/documentation/patterns-and-practices.html#document-metadata)** - everything that may help you designing great reports and reusable code that is easy to maintain.
 
-## Example invoice
+[![Patterns and Practices](https://img.shields.io/badge/%F0%9F%94%8D%20read-patterns%20and%20practices-blue)](https://www.questpdf.com/documentation/patterns-and-practices.html#document-metadata)
+Everything that may help you designing great reports and create reusable code that is easy to maintain.
 
-Do you believe that creating a complete invoice document can take less than 200 lines of code? We have prepared for you a step-by-step instruction that shows every detail of this implementation and describes the best patterns and practices.
 
-For tutorial, documentation and API reference, please visit [the QuestPDF documentation](https://www.questpdf.com/documentation/getting-started.html).
+<!-- 🚀 📖  ℹ️-->
 
-<a href="https://github.com/QuestPDF/example-invoice">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/invoice.png" width="595px">
-</a>
+## Simplicity is the key
 
-Here you can find an example code showing how easy is to write and understand the fluent API.
-
-**General document structure** with header, content and footer:
+How easy it is to start and prototype with QuestPDF? Really easy thanks to its minimal API! Please analyse the code below:
 
 ```csharp
-public void Compose(IDocumentContainer container)
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+
+// code in your main method
+Document.Create(container =>
 {
-    container
-        .Page(page =>
-        {
-            page.Margin(50);
-            
-            page.Header().Element(ComposeHeader);
-            page.Content().Element(ComposeContent);
-            
-            page.Footer().AlignCenter().Text(x =>
+    container.Page(page =>
+    {
+        page.Size(PageSizes.A4);
+        page.Margin(2, Unit.Centimetre);
+        page.Background(Colors.White);
+        page.DefaultTextStyle(x => x.FontSize(20));
+        
+        page.Header()
+            .Text("Hello PDF!")
+            .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+        
+        page.Content()
+            .PaddingVertical(1, Unit.Centimetre)
+            .Column(x =>
             {
+                x.Spacing(20);
+                
+                x.Item().Text(Placeholders.LoremIpsum());
+                x.Item().Image(Placeholders.Image(200, 100));
+            });
+        
+        page.Footer()
+            .AlignCenter()
+            .Text(x =>
+            {
+                x.Span("Page ");
                 x.CurrentPageNumber();
-                x.Span(" / ");
-                x.TotalPages();
-            });
-        });
-}
-```
-
-**The header area** consists of basic invoice information along with a logo placeholder.
-
-```csharp
-void ComposeHeader(IContainer container)
-{
-    var titleTextStyle = TextStyle.Default.Size(20).SemiBold().Color(Colors.Blue.Medium);
-    
-    container.Row(row =>
-    {
-        row.RelativeColumn().Stack(stack =>
-        {
-            stack.Item().Text($"Invoice #{Model.InvoiceNumber}", titleStyle);
-
-            stack.Item().Text(text =>
-            {
-                text.Span("Issue date: ", TextStyle.Default.SemiBold());
-                text.Span($"{Model.IssueDate:d}");
-            });
-
-            stack.Item().Text(text =>
-            {
-                text.Span("Due date: ", TextStyle.Default.SemiBold());
-                text.Span($"{Model.DueDate:d}");
-            });
-        });
-        
-        row.ConstantColumn(100).Height(50).Placeholder();
-    });
-}
-```
-
-Implementation of **the content area** that contains seller and customer details, then listing of all bought products, then a comments section.
-
-```csharp
-void ComposeContent(IContainer container)
-{
-    container.PaddingVertical(40).Stack(column => 
-    {
-        column.Spacing(20);
-        
-        column.Item().Row(row =>
-        {
-            row.RelativeColumn().Component(new AddressComponent("From", Model.SellerAddress));
-            row.ConstantColumn(50);
-            row.RelativeColumn().Component(new AddressComponent("For", Model.CustomerAddress));
-        });
-
-        column.Item().Element(ComposeTable);
-
-        var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-        
-        column
-            .Item()
-            .PaddingRight(5)
-            .AlignRight()
-            .Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
-
-        if (!string.IsNullOrWhiteSpace(Model.Comments))
-            column.Item().PaddingTop(25).Element(ComposeComments);
-    });
-}
-```
-
-**The table and comments** codes are extracted into separate methods to increase clarity:
-
-```csharp
-void ComposeTable(IContainer container)
-{
-    var headerStyle = TextStyle.Default.SemiBold();
-    
-    container.Decoration(decoration =>
-    {
-        // header
-        decoration.Header().BorderBottom(1).Padding(5).Row(row => 
-        {
-            row.ConstantColumn(25).Text("#", headerStyle);
-            row.RelativeColumn(3).Text("Product", headerStyle);
-            row.RelativeColumn().AlignRight().Text("Unit price", headerStyle);
-            row.RelativeColumn().AlignRight().Text("Quantity", headerStyle);
-            row.RelativeColumn().AlignRight().Text("Total", headerStyle);
-        });
-
-        // content
-        decoration
-            .Content()
-            .Stack(column =>
-            {
-                foreach (var item in Model.Items)
-                {
-                    column
-                    .Item()
-                    .ShowEntire()
-                    .BorderBottom(1)
-                    .BorderColor(Colors.Grey.Lighten2)
-                    .Padding(5)
-                    .Row(row => 
-                    {
-                        row.ConstantColumn(25).Text(Model.Items.IndexOf(item) + 1);
-                        row.RelativeColumn(3).Text(item.Name);
-                        row.RelativeColumn().AlignRight().Text($"{item.Price}$");
-                        row.RelativeColumn().AlignRight().Text(item.Quantity);
-                        row.RelativeColumn().AlignRight().Text($"{item.Price * item.Quantity}$");
-                    });
-                }
             });
     });
-}
+})
+.GeneratePdf("hello.pdf");
 ```
 
-```csharp
-void ComposeComments(IContainer container)
-{
-    container.ShowEntire().Background(Colors.Grey.Lighten3).Padding(10).Stack(message => 
-    {
-        message.Spacing(5);
-        message.Item().Text("Comments", TextStyle.Default.Size(14).SemiBold());
-        message.Item().Text(Model.Comments);
-    });
-}
-```
+And compare it to the produced PDF file:
 
-**The address details section** is implemented using components. This way the code can be easily reused for both seller and customer:
+<img src="https://raw.githubusercontent.com/QuestPDF/QuestPDF-Documentation/main/images/minimal-api.png" width="250px">
 
-```csharp
-public class AddressComponent : IComponent
-{
-    private string Title { get; }
-    private Address Address { get; }
+## Are you ready for more?
 
-    public AddressComponent(string title, Address address)
-    {
-        Title = title;
-        Address = address;
-    }
-    
-    public void Compose(IContainer container)
-    {
-        container.ShowEntire().Stack(column =>
-        {
-            column.Spacing(5);
+The Fluent API of QuestPDF scales really well. It is easy to create and maintain even most complex documents. Read [the Getting started tutorial](https://www.questpdf.com/documentation/getting-started.html) to learn QuestPDF basics and implement an invoice under 200 lines of code. You can also investigate and play with the code from [the example repository](https://github.com/QuestPDF/example-invoice).
 
-            column
-                .Item()
-                .BorderBottom(1)
-                .PaddingBottom(5)
-                .Text(Title, TextStyle.Default.SemiBold());
-            
-            column.Item().Text(Address.CompanyName);
-            column.Item().Text(Address.Street);
-            column.Item().Text($"{Address.City}, {Address.State}");
-            column.Item().Text(Address.Email);
-            column.Item().Text(Address.Phone);
-        });
-    }
-}
-```
+<img src="https://github.com/QuestPDF/example-invoice/raw/main/images/invoice.png" width="400px">
