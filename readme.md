@@ -20,7 +20,6 @@ Unlike other libraries, it does not rely on the HTML-to-PDF conversion which in 
 ## Please show the value
 
 Choosing a project dependency could be difficult. We need to ensure stability and maintainability of our projects. Surveys show that GitHub stars count play an important factor when assessing library quality. 
-
 ⭐ Please give [this repository](https://github.com/QuestPDF/QuestPDF) a star. It takes seconds and help thousands of developers! ⭐
 
 ## Please share with the community
