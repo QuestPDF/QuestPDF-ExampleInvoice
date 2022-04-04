@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <OutputType>Exe</OutputType>
         <RootNamespace>QuestPDF.ExampleInvoice</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="QuestPDF" Version="2022.3.0" />
+      <PackageReference Include="QuestPDF" Version="2022.4.0" />
     </ItemGroup>
 
 </Project>
