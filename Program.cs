@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using QuestPDF.Fluent;
+using QuestPDF.Previewer;
 
 namespace QuestPDF.ExampleInvoice
 {
@@ -14,21 +15,32 @@ namespace QuestPDF.ExampleInvoice
         /// </summary>
         static void Main(string[] args)
         {
-            var filePath = "invoice.pdf";
-            
             var model = InvoiceDocumentDataSource.GetInvoiceDetails();
             var document = new InvoiceDocument(model);
+
+            // Generate PDF file and show it in the default viewer
+            //GenerateDocumentAndShow(document);
+            
+            // Or open the QuestPDF Previewer and experiment with the document's design
+            // in real-time without recompilation after each code change
+            document.ShowInPreviewer();
+        }
+
+        static void GenerateDocumentAndShow(InvoiceDocument document)
+        {
+            const string filePath = "invoice.pdf";
+            
             document.GeneratePdf(filePath);
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            var process = new Process
             {
-                Process.Start("explorer.exe", filePath);
-            }
-            else
-            {
-                var fullPath = Path.Combine(Directory.GetCurrentDirectory(), filePath);
-                Console.WriteLine($"Output PDF file is available here: {fullPath}");
-            }
+                StartInfo = new ProcessStartInfo(filePath)
+                {
+                    UseShellExecute = true
+                }
+            };
+
+            process.Start();
         }
     }
 }
