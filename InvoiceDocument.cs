@@ -79,7 +79,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Item().Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$", TextStyle.Default.SemiBold());
+                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$").SemiBold();
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
                     column.Item().PaddingTop(25).Element(ComposeComments);
