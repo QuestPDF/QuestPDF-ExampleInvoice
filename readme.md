@@ -59,19 +59,16 @@ dotnet add package QuestPDF
 
 ## Documentation
 
-[![Getting started tutorial]( https://img.shields.io/badge/%F0%9F%9A%80%20read-getting%20started-blue)](https://www.questpdf.com/documentation/getting-started.html)
+[![Getting started tutorial]( https://img.shields.io/badge/%F0%9F%9A%80%20read-getting%20started-blue)](https://www.questpdf.com/getting-started.html)
 A short and easy to follow tutorial showing how to design an invoice document under 200 lines of code.
 
 
-[![API reference](https://img.shields.io/badge/%F0%9F%93%96%20read-API%20reference-blue)](https://www.questpdf.com/documentation/api-reference.html)
+[![API reference](https://img.shields.io/badge/%F0%9F%93%96%20read-API%20reference-blue)](https://www.questpdf.com/api-reference/index.html)
 A detailed description of behavior of all available components and how to use them with C# Fluent API.
 
 
-[![Patterns and Practices](https://img.shields.io/badge/%F0%9F%94%8D%20read-patterns%20and%20practices-blue)](https://www.questpdf.com/documentation/patterns-and-practices.html#document-metadata)
+[![Patterns and Practices](https://img.shields.io/badge/%E2%9C%A8%20read-patterns%20and%20practices-blue)](https://www.questpdf.com/design-patterns.html)
 Everything that may help you designing great reports and create reusable code that is easy to maintain.
-
-
-<!-- 🚀 📖  ℹ️-->
 
 ## Simplicity is the key
 
@@ -120,7 +117,7 @@ Document.Create(container =>
 
 And compare it to the produced PDF file:
 
-<img src="https://raw.githubusercontent.com/QuestPDF/QuestPDF-Documentation/main/images/minimal-api.png" width="250px">
+<img src="https://github.com/QuestPDF/QuestPDF-Documentation/blob/main/docs/public/minimal-example-shadow.png?raw=true" width="250px">
 
 ## Are you ready for more?
 
