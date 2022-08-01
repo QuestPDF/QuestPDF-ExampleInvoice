@@ -1,5 +1,5 @@
 <a href="https://www.questpdf.com/" target="_blank">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="300"> 
+  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="400"> 
 </a>
 
 ---
@@ -121,6 +121,6 @@ And compare it to the produced PDF file:
 
 ## Are you ready for more?
 
-The Fluent API of QuestPDF scales really well. It is easy to create and maintain even most complex documents. Read [the Getting started tutorial](https://www.questpdf.com/documentation/getting-started.html) to learn QuestPDF basics and implement an invoice under 200 lines of code. You can also investigate and play with the code from [the example repository](https://github.com/QuestPDF/example-invoice).
+The Fluent API of QuestPDF scales really well. It is easy to create and maintain even most complex documents. Read [the Getting started tutorial](https://www.questpdf.com/getting-started.html) to learn QuestPDF basics and implement an invoice under 200 lines of code. You can also investigate and play with the code from [the example repository](https://github.com/QuestPDF/example-invoice).
 
 <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/invoice.png" width="400px">
