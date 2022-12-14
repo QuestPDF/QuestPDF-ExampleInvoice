@@ -12,7 +12,7 @@ namespace QuestPDF.ExampleInvoice
         {
             var items = Enumerable
                 .Range(1, 25)
-                .Select(i => GenerateRandomOrderItem())
+                .Select(_ => GenerateRandomOrderItem())
                 .ToList();
             
             return new InvoiceModel

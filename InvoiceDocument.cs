@@ -114,10 +114,12 @@ namespace QuestPDF.ExampleInvoice
                 
                 foreach (var item in Model.Items)
                 {
-                    table.Cell().Element(CellStyle).Text(Model.Items.IndexOf(item) + 1);
+                    var index = Model.Items.IndexOf(item) + 1;
+                    
+                    table.Cell().Element(CellStyle).Text($"{index}");
                     table.Cell().Element(CellStyle).Text(item.Name);
                     table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price}$");
-                    table.Cell().Element(CellStyle).AlignRight().Text(item.Quantity);
+                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Quantity}");
                     table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity}$");
                     
                     static IContainer CellStyle(IContainer container) => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
