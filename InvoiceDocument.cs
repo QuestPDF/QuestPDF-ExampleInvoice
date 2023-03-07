@@ -40,19 +40,19 @@ namespace QuestPDF.ExampleInvoice
         {
             container.Row(row =>
             {
-                row.RelativeItem().Column(Column =>
+                row.RelativeItem().Column(column =>
                 {
-                    Column
+                    column
                         .Item().Text($"Invoice #{Model.InvoiceNumber}")
                         .FontSize(20).SemiBold().FontColor(Colors.Blue.Medium);
                     
-                    Column.Item().Text(text =>
+                    column.Item().Text(text =>
                     {
                         text.Span("Issue date: ").SemiBold();
                         text.Span($"{Model.IssueDate:d}");
                     });
                     
-                    Column.Item().Text(text =>
+                    column.Item().Text(text =>
                     {
                         text.Span("Due date: ").SemiBold();
                         text.Span($"{Model.DueDate:d}");
