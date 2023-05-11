@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq;
 using QuestPDF.Drawing;
 using QuestPDF.Fluent;
@@ -45,7 +46,7 @@ namespace QuestPDF.ExampleInvoice
                     column
                         .Item().Text($"Invoice #{Model.InvoiceNumber}")
                         .FontSize(20).SemiBold().FontColor(Colors.Blue.Medium);
-                    
+
                     column.Item().Text(text =>
                     {
                         text.Span("Issue date: ").SemiBold();
@@ -79,7 +80,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Item().Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice}$").SemiBold();
+                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice:C}").SemiBold();
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
                     column.Item().PaddingTop(25).Element(ComposeComments);
@@ -115,12 +116,12 @@ namespace QuestPDF.ExampleInvoice
                 foreach (var item in Model.Items)
                 {
                     var index = Model.Items.IndexOf(item) + 1;
-                    
+
                     table.Cell().Element(CellStyle).Text($"{index}");
                     table.Cell().Element(CellStyle).Text(item.Name);
-                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price}$");
+                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price:C}");
                     table.Cell().Element(CellStyle).AlignRight().Text($"{item.Quantity}");
-                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity}$");
+                    table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity:C}");
                     
                     static IContainer CellStyle(IContainer container) => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
                 }
