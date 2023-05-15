@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="QuestPDF" Version="2023.4.1" />
+      <PackageReference Include="QuestPDF" Version="2023.5.0" />
     </ItemGroup>
 
 </Project>
