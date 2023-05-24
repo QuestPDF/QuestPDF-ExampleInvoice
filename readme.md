@@ -9,7 +9,7 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/QuestPDF/QuestPDF?style=for-the-badge)](https://github.com/QuestPDF/QuestPDF/stargazers)
 [![Nuget version](https://img.shields.io/nuget/v/QuestPdf?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
 [![Nuget download](https://img.shields.io/nuget/dt/QuestPDF?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![License](https://img.shields.io/github/license/QuestPDF/QuestPDF?style=for-the-badge)](https://github.com/QuestPDF/QuestPDF/blob/main/LICENSE)
+[![QuestPDF License](https://img.shields.io/badge/LICENSE%20details-Community%20MIT%20and%20professional-green?style=for-the-badge)](https://www.questpdf.com/pricing.html#license)
 
 <br />
 
@@ -48,11 +48,12 @@
 
 <br />
 
-## Please show the value
+## Please help by giving a star
 
 Choosing a project dependency could be difficult. We need to ensure stability and maintainability of our projects. Surveys show that GitHub stars count play an important factor when assessing library quality. 
 
 ⭐ Please give [this repository](https://github.com/QuestPDF/QuestPDF) a star. It takes seconds and help thousands of developers! ⭐
+
 ## Let's get started
 
 Begin exploring the QuestPDF library today. You are 250 lines of C# code away from creating a fully functional PDF invoice implementation.
