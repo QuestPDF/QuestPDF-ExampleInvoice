@@ -9,6 +9,8 @@ namespace QuestPDF.ExampleInvoice
 {
     public class InvoiceDocument : IDocument
     {
+        public static Image LogoImage { get; } = Image.FromFile("logo.png");
+        
         public InvoiceModel Model { get; }
 
         public InvoiceDocument(InvoiceModel model)
@@ -59,8 +61,8 @@ namespace QuestPDF.ExampleInvoice
                         text.Span($"{Model.DueDate:d}");
                     });
                 });
-                
-                row.ConstantItem(100).Height(50).Placeholder();
+
+                row.ConstantItem(175).Image(LogoImage);
             });
         }
 
