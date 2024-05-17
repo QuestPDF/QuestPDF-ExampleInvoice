@@ -14,7 +14,7 @@ namespace QuestPDF.ExampleInvoice
             Settings.License = LicenseType.Community;
             
             // For documentation and implementation details, please visit:
-            // https://www.questpdf.com/documentation/getting-started.html
+            // https://www.questpdf.com/getting-started.html
             var model = InvoiceDocumentDataSource.GetInvoiceDetails();
             var document = new InvoiceDocument(model);
 
