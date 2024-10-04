@@ -1,4 +1,5 @@
-﻿using QuestPDF.Fluent;
+﻿using QuestPDF.Companion;
+using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using QuestPDF.Previewer;
 
@@ -21,10 +22,10 @@ namespace QuestPDF.ExampleInvoice
             // Generate PDF file and show it in the default viewer
             document.GeneratePdfAndShow();
             
-            // Or open the QuestPDF Previewer and experiment with the document's design
+            // Or open the QuestPDF Companion App and experiment with the document's design
             // in real-time without recompilation after each code change
             // https://www.questpdf.com/document-previewer.html
-            //document.ShowInPreviewer();
+            //document.ShowInCompanion();
         }
     }
 }
