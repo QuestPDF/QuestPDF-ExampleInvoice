@@ -47,7 +47,7 @@ namespace QuestPDF.ExampleInvoice
                 {
                     column
                         .Item().Text($"Invoice #{Model.InvoiceNumber}")
-                        .FontSize(20).SemiBold().FontColor(Colors.Blue.Medium);
+                        .FontSize(20).Black();
 
                     column.Item().Text(text =>
                     {
@@ -82,7 +82,7 @@ namespace QuestPDF.ExampleInvoice
                 column.Item().Element(ComposeTable);
 
                 var totalPrice = Model.Items.Sum(x => x.Price * x.Quantity);
-                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice:C}").SemiBold();
+                column.Item().PaddingRight(5).AlignRight().Text($"Grand total: {totalPrice:C}").Bold();
 
                 if (!string.IsNullOrWhiteSpace(Model.Comments))
                     column.Item().PaddingTop(25).Element(ComposeComments);
@@ -91,8 +91,6 @@ namespace QuestPDF.ExampleInvoice
 
         void ComposeTable(IContainer container)
         {
-            var headerStyle = TextStyle.Default.SemiBold();
-            
             container.Table(table =>
             {
                 table.ColumnsDefinition(columns =>
@@ -106,13 +104,16 @@ namespace QuestPDF.ExampleInvoice
                 
                 table.Header(header =>
                 {
-                    header.Cell().Text("#");
-                    header.Cell().Text("Product").Style(headerStyle);
-                    header.Cell().AlignRight().Text("Unit price").Style(headerStyle);
-                    header.Cell().AlignRight().Text("Quantity").Style(headerStyle);
-                    header.Cell().AlignRight().Text("Total").Style(headerStyle);
-                    
                     header.Cell().ColumnSpan(5).PaddingTop(5).BorderBottom(1).BorderColor(Colors.Black);
+                    
+                    header.Cell().Element(CellStyle).Text("#");
+                    header.Cell().Element(CellStyle).Text("Product");
+                    header.Cell().Element(CellStyle).AlignRight().Text("Unit price");
+                    header.Cell().Element(CellStyle).AlignRight().Text("Quantity");
+                    header.Cell().Element(CellStyle).AlignRight().Text("Total");
+                    
+                    static IContainer CellStyle(IContainer container) 
+                        => container.BorderBottom(1).PaddingBottom(5).DefaultTextStyle(TextStyle.Default.Bold());
                 });
                 
                 foreach (var item in Model.Items)
@@ -125,7 +126,8 @@ namespace QuestPDF.ExampleInvoice
                     table.Cell().Element(CellStyle).AlignRight().Text($"{item.Quantity}");
                     table.Cell().Element(CellStyle).AlignRight().Text($"{item.Price * item.Quantity:C}");
                     
-                    static IContainer CellStyle(IContainer container) => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
+                    static IContainer CellStyle(IContainer container)
+                        => container.BorderBottom(1).BorderColor(Colors.Grey.Lighten2).PaddingVertical(5);
                 }
             });
         }
@@ -158,7 +160,7 @@ namespace QuestPDF.ExampleInvoice
             {
                 column.Spacing(2);
 
-                column.Item().Text(Title).SemiBold();
+                column.Item().Text(Title).Bold();
                 column.Item().PaddingBottom(5).LineHorizontal(1); 
                 
                 column.Item().Text(Address.CompanyName);
