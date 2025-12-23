@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <OutputType>Exe</OutputType>
         <RootNamespace>QuestPDF.ExampleInvoice</RootNamespace>
+        <LangVersion>14</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="QuestPDF" Version="2025.7.2" />
+      <PackageReference Include="QuestPDF" Version="2025.12.0" />
     </ItemGroup>
 
     <ItemGroup>
