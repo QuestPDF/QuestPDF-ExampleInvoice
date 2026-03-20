@@ -104,8 +104,6 @@ namespace QuestPDF.ExampleInvoice
                 
                 table.Header(header =>
                 {
-                    header.Cell().ColumnSpan(5).PaddingTop(5).BorderBottom(1).BorderColor(Colors.Black);
-                    
                     header.Cell().Element(CellStyle).Text("#");
                     header.Cell().Element(CellStyle).Text("Product");
                     header.Cell().Element(CellStyle).AlignRight().Text("Unit price");
