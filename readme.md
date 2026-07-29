@@ -1,65 +1,57 @@
-<a href="https://www.questpdf.com/" target="_blank">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="400"> 
+<a href="https://github.com/QuestPDF/QuestPDF">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/9535de26-aeac-42ac-ac45-019a2893ed6b">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/e9d197ee-0cad-44f0-9efa-80ad68c31abe">
+    <img src="https://github.com/user-attachments/assets/e9d197ee-0cad-44f0-9efa-80ad68c31abe" width="300">
+  </picture>
 </a>
 
----
+<br>
+<br>
 
-[![QuestPDF Homepage](https://img.shields.io/badge/Homepage-blue?style=for-the-badge)](https://www.questpdf.com)
-[![Dotnet](https://img.shields.io/badge/platform-.NET-blue?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![GitHub Repo stars](https://img.shields.io/github/stars/QuestPDF/QuestPDF?style=for-the-badge)](https://github.com/QuestPDF/QuestPDF/stargazers)
-[![Nuget version](https://img.shields.io/nuget/v/QuestPdf?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![Nuget download](https://img.shields.io/nuget/dt/QuestPDF?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![QuestPDF License](https://img.shields.io/badge/LICENSE%20details-Community%20MIT%20and%20professional-green?style=for-the-badge)](https://www.questpdf.com/pricing.html#license)
+## Modern PDF library for C# developers
 
-<br />
+QuestPDF is a production-ready library that lets you design documents the way you design software: with clean, maintainable, strong-typed C# code.
+Stop fighting with HTML-to-PDF conversion. Build pixel-perfect reports, invoices, and exports using the language and tools you already love.
 
-### QuestPDF is a modern open-source .NET library for PDF document generation. Offering comprehensive layout engine powered by concise and discoverable C# Fluent API.
+The library is free for individuals, non-profits, open-source projects, and organizations under $1M in annual gross revenue. [Read more](https://www.questpdf.com/pricing)
 
-<img src="https://github.com/QuestPDF/QuestPDF-Documentation/blob/main/docs/public/previewer/animation.gif?raw=true" width="100%">
+<br>
 
-<table>
-<tr>
-    <td>👨‍💻</td>
-    <td>Design PDF documents using C# and employ a code-only approach. Utilize your version control system to its fullest potential.</td>
-</tr>
-<tr>
-    <td>🧱</td>
-    <td>Compose PDF document with a range of powerful and predictable structural elements, such as text, image, border, table, and many more.</td>
-</tr>
-<tr>
-    <td>⚙️</td>
-    <td>Utilize a comprehensive layout engine, specifically designed for PDF document generation and paging support.</td>
-</tr>
-<tr>
-    <td>📖</td>
-    <td>Write code using concise and easy-to-understand C# Fluent API. Utilize IntelliSense to quickly discover available options.</td>
-</tr>
-<tr>
-    <td>🔗</td>
-    <td>Don't be limited to any proprietary scripting language or format. Follow your experience and leverage all modern C# features.</td>
-</tr>
-<tr>
-    <td>⌛</td>
-    <td>Save time thanks to a hot-reload capability, allowing real-time PDF document preview without code recompilation.</td>
-</tr>
-</table>
+[![GitHub Stars and Stargazers](https://img.shields.io/github/stars/QuestPDF/QuestPDF?style=for-the-badge&label=GitHub%20Stars&logo=github&color=FFEB3B&logoColor=white)](https://github.com/QuestPDF/QuestPDF)
+<br>
+[![Nuget package download](https://img.shields.io/nuget/dt/QuestPDF?style=for-the-badge&label=NuGet%20downloads&logo=nuget&color=0277BD&logoColor=white)](https://www.nuget.org/packages/QuestPDF/)
+<br>
+[![QuestPDF License](https://img.shields.io/badge/LICENSE-Community%20and%20commercial-2E7D32?style=for-the-badge&logo=googledocs&logoColor=white)](https://www.questpdf.com/pricing/)
 
-<br />
+<br>
+<hr>
 
-<br />
+[Home Page](https://www.questpdf.com)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[Quick Start](https://www.questpdf.com/quick-start.html)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[Invoice Tutorial](https://www.questpdf.com/invoice-tutorial.html)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[Features Overview](https://www.questpdf.com/features-overview.html)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[Pricing](https://www.questpdf.com/pricing/)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[License](https://www.questpdf.com/license/)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+[NuGet](https://www.nuget.org/packages/QuestPDF)
 
-## Please help by giving a star
+<hr>
+<br>
 
-Choosing a project dependency could be difficult. We need to ensure stability and maintainability of our projects. Surveys show that GitHub stars count play an important factor when assessing library quality. 
+## See a real-world example
 
-⭐ Please give [this repository](https://github.com/QuestPDF/QuestPDF) a star. It takes seconds and help thousands of developers! ⭐
+Follow our detailed tutorial and see how easy it is to generate a fully functional invoice with fewer than 250 lines of C# code.
 
-## Let's get started
+- Step-by-step guidance
+- Production-ready code
+- Best practices included
 
-Begin exploring the QuestPDF library today. You are 250 lines of C# code away from creating a fully functional PDF invoice implementation.
+<img width="300" alt="Example Invoice" src="https://github.com/user-attachments/assets/dd268fe2-e558-4b9a-944d-b2f41ce52940" />
 
-Read the Getting Started tutorial to familiarize yourself with general library architecture, important layout structures as well as to better understand helpful patterns and practices. Easily start designing your PDF documents, reports, invoices and even more.
-
-[![Getting started tutorial](https://img.shields.io/badge/%F0%9F%9A%80%20read-getting%20started-blue?style=for-the-badge)](https://www.questpdf.com/getting-started.html)
-
-<img src="https://github.com/QuestPDF/QuestPDF-Documentation/blob/main/docs/public/invoice-small.png?raw=true" width="400px">
+[![Read Real-world Invoice Tutorial](https://img.shields.io/badge/read%20tutorial-0288D1?style=for-the-badge)](https://www.questpdf.com/invoice-tutorial.html)
